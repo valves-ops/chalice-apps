@@ -1,0 +1,12 @@
+version: 0.2
+
+env:
+  shell: bash
+phases:
+  pre_build:
+    commands:
+      - cd countries
+      - pip install -r requirements-dev.txt
+  build:
+    commands:
+      - chalice deploy

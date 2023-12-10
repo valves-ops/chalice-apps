@@ -1,0 +1,13 @@
+version: 0.2
+
+env:
+  shell: bash
+phases:
+  pre_build:
+    commands:
+      - cd countries
+      - python --version
+      - pip install -r requirements-dev.txt
+  build:
+    commands:
+      - py.test tests/
