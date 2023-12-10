@@ -1,0 +1,42 @@
+{
+  "resources": [
+    {
+      "name": "fetch_data_handler_role",
+      "resource_type": "iam_role",
+      "role_arn": "arn:aws:iam::048689258641:role/countries-dev-fetch_data_handler",
+      "role_name": "countries-dev-fetch_data_handler"
+    },
+    {
+      "name": "fetch_data_handler",
+      "resource_type": "lambda_function",
+      "lambda_arn": "arn:aws:lambda:sa-east-1:048689258641:function:countries-dev-fetch_data_handler"
+    },
+    {
+      "name": "fetch_data_handler-sqs-event-source",
+      "resource_type": "sqs_event",
+      "queue_arn": "arn:aws:sqs:sa-east-1:048689258641:fetch-requests-dev",
+      "event_uuid": "224a0add-0017-4bd9-9645-dd42857895ea",
+      "queue": "fetch-requests-dev",
+      "lambda_arn": "arn:aws:lambda:sa-east-1:048689258641:function:countries-dev-fetch_data_handler"
+    },
+    {
+      "name": "api_handler_role",
+      "resource_type": "iam_role",
+      "role_arn": "arn:aws:iam::048689258641:role/countries-dev-api_handler",
+      "role_name": "countries-dev-api_handler"
+    },
+    {
+      "name": "api_handler",
+      "resource_type": "lambda_function",
+      "lambda_arn": "arn:aws:lambda:sa-east-1:048689258641:function:countries-dev"
+    },
+    {
+      "name": "rest_api",
+      "resource_type": "rest_api",
+      "rest_api_id": "9l88ud5hei",
+      "rest_api_url": "https://9l88ud5hei.execute-api.sa-east-1.amazonaws.com/api/"
+    }
+  ],
+  "schema_version": "2.0",
+  "backend": "api"
+}

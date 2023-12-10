@@ -1,0 +1,77 @@
+{
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Effect": "Allow",
+			"Action": [
+				"dynamodb:BatchGetItem",
+                "dynamodb:BatchWriteItem",
+                "dynamodb:PutItem",
+                "dynamodb:DeleteItem",
+                "dynamodb:Scan",
+                "dynamodb:Query",
+                "dynamodb:UpdateItem",
+                "dynamodb:GetItem"
+			],
+			"Resource": [
+				"arn:aws:dynamodb:sa-east-1:048689258641:table/countries-dev",
+                "arn:aws:dynamodb:sa-east-1:048689258641:table/status-dev",
+				"arn:aws:dynamodb:sa-east-1:048689258641:table/circuit-breaker-state-dev"
+			]
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"dax:BatchGetItem",
+                "dax:BatchWriteItem",
+                "dax:PutItem",
+                "dax:DeleteItem",
+                "dax:Scan",
+                "dax:Query",
+                "dax:UpdateItem",
+                "dax:GetItem"
+			],
+			"Resource": [
+				"arn:aws:dax:sa-east-1:048689258641:cache/dax-dev"
+			]
+		},
+        {
+			"Effect": "Allow",
+			"Action": [
+				"sqs:GetQueueUrl",
+                "sqs:GetQueueAttributes",
+				"sqs:ReceiveMessage",
+				"sqs:SendMessage",
+                "sqs:DeleteMessage"
+			],
+			"Resource": [
+				"arn:aws:sqs:sa-east-1:048689258641:fetch-requests-dev"
+			]
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"logs:CreateLogStream",
+				"logs:CreateLogGroup",
+				"logs:PutLogEvents"
+			],
+			"Resource": [
+				"arn:*:logs:*:*:*"
+			]
+		},
+		{
+            "Effect": "Allow",
+            "Action": [
+                "logs:CreateLogGroup",
+                "logs:CreateLogStream",
+                "logs:PutLogEvents",
+                "ec2:CreateNetworkInterface",
+                "ec2:DescribeNetworkInterfaces",
+                "ec2:DeleteNetworkInterface",
+                "ec2:AssignPrivateIpAddresses",
+                "ec2:UnassignPrivateIpAddresses"
+            ],
+            "Resource": "*"
+        }
+	]
+}

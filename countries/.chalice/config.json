@@ -1,0 +1,22 @@
+{
+  "version": "2.0",
+  "app_name": "countries",
+  "stages": {
+    "dev": {
+      "api_gateway_stage": "api",
+      "autogen_policy": false,
+      "iam_policy_file": "iam_policy.json",
+      "environment_variables": {
+        "region": "sa-east-1",
+        "environment": "dev",
+        "use_dax": "True",
+        "dax_endpoint": "dax-dev.ehhmnu.dax-clusters.sa-east-1.amazonaws.com",
+        "sqs_endpoint": "https://sqs.sa-east-1.amazonaws.com/"
+      },
+      "subnet_ids": [
+        "subnet-09ffbb8c51cc80cd0"
+      ],
+      "security_group_ids": ["sg-045a302937ae7e45a"]
+    }
+  }
+}
