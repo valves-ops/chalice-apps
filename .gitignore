@@ -194,3 +194,4 @@ crash.*.log
 
 ### Chalice
 .chalice/deployments/
+.chalice/deployed/
