@@ -55,7 +55,7 @@ $ cd countries
 $ pip install -r requirements-dev.txt
 ```
 
-4. Set AWS_PROFILE environment variable in case you have multiple defined on your AWS credentials file:
+<!-- 4. Set AWS_PROFILE environment variable in case you have multiple defined on your AWS credentials file:
 ```console
 $ export AWS_PROFILE=<your-chosen-profile>
 ```
@@ -64,9 +64,9 @@ $ export AWS_PROFILE=<your-chosen-profile>
 
 ```console
 $ export AWS_DEFAULT_REGION=<sa-east-1>
-```
+``` -->
 
-6. Run test suite to check everything worked fine
+4. Run test suite to check everything worked fine
 ```console
 $ py.test tests
 ```
@@ -93,6 +93,9 @@ $ make plan-dev
 $ make apply-dev
 ```
 
+Note that the pipeline is triggered automatically after its creation and it should fail, because the config.json contains invalid values for the recently deployed infrastructre.
+
+
 3. Edit the `.chalice/config.json` with the information outputed by Terraform
 - Set dax_endpoint environment variable
 - Set subnet_ids with only the private subnet
@@ -100,14 +103,15 @@ $ make apply-dev
 - Set the security_group_ids with only the default vpc security group
 - Set the iam_role ARN
 
-4. Deploy chalice application
+<!-- 4. Deploy chalice application
 ```console
 $ chalice deploy
-```
+``` -->
+<!-- 
+5. Access the application through the address returned by the chalice deploy command -->
 
-5. Access the application through the address returned by the chalice deploy command
-
-6. Commit `.chalice/config.json` to make its correct version available to the pipeline
+4. Commit and push `.chalice/config.json` changes to make its correct version available to the pipeline
+5. Wait for the pipeline to run and get the application endpoints from the resulting logs 
 
 
 ## API
@@ -391,6 +395,7 @@ Example
 - __AWS CodePipeline__ for CI/CD
 - __DynamoDB__ as storage backend
 - __DAX__ for caching
+- Logging and Monitoring on __AWS CloudWatch__ (standard lambda monitoring)
   
 
 #### Why Terraform?
