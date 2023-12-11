@@ -14,9 +14,9 @@
         "sqs_endpoint": "https://sqs.sa-east-1.amazonaws.com/"
       },
       "subnet_ids": [
-        "subnet-0129230bbdcd9c52f"
+        "subnet-07b764ab2bf7c6905"
       ],
-      "security_group_ids": ["sg-006075281c3051bca"]
+      "security_group_ids": ["sg-03244f8c939987646"]
     }
   }
 }
