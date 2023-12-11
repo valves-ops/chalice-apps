@@ -3,5 +3,6 @@
 .python-version
 
 .terraform/
+terraform.tfstate
 
 .chalice/deployments/
