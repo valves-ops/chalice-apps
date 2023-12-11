@@ -81,22 +81,22 @@ $ py.test tests
 - S3 bucket and DynamoDB Table configured for terraform remote state (change to local?)
 
 ### Instructions
-1. Setup Terraform Project
+#### 1. Setup Terraform Project
 ```console
 $ cd infrastructure
 $ terraform init
 ```
 
-2. Provision Infrastructure (DynamoDB tables, SQS queues, pipeline etc)
+#### 2. Provision Infrastructure (DynamoDB tables, SQS queues, pipeline etc)
 ```console
 $ make plan-dev
 $ make apply-dev
 ```
 
-Note that the pipeline is triggered automatically after its creation and it should fail, because the config.json contains invalid values for the recently deployed infrastructre.
+  Note that the pipeline is triggered automatically after its creation and it should fail, because the config.json contains invalid values for the recently deployed infrastructre.
 
 
-3. Edit the `.chalice/config.json` with the information outputed by Terraform
+#### 3. Edit the `.chalice/config.json` with the information outputed by Terraform
 - Set dax_endpoint environment variable
 - Set subnet_ids with only the private subnet
 - Set the correct region on the SQS endpoint variable (in case you're using one different from the sa-east-1)
@@ -110,8 +110,8 @@ $ chalice deploy
 <!-- 
 5. Access the application through the address returned by the chalice deploy command -->
 
-4. Commit and push `.chalice/config.json` changes to make its correct version available to the pipeline
-5. Wait for the pipeline to run and get the application endpoints from the resulting logs 
+#### 4. Commit and push `.chalice/config.json` changes to make its correct version available to the pipeline
+#### 5. Wait for the pipeline to run and get the application endpoints from the resulting logs 
 
 
 ## API
