@@ -25,3 +25,7 @@ output "vpc_security_group_id" {
 output "private_subnet_a" {
     value = aws_subnet.private_subnet_a.id
 }
+
+output "chalice_lambda_role_arn" {
+    value = aws_iam_role.chalice_lambda_role.arn
+}

@@ -98,6 +98,7 @@ $ make apply-dev
 - Set subnet_ids with only the private subnet
 - Set the correct region on the SQS endpoint variable (in case you're using one different from the sa-east-1)
 - Set the security_group_ids with only the default vpc security group
+- Set the iam_role ARN
 
 4. Deploy chalice application
 ```console
