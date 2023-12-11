@@ -9,7 +9,7 @@ phases:
       - pip install -r requirements-dev.txt
       - mkdir -p ./.chalice/deployed
       # Get chalice deployed state
-      - aws s3 cp s3://chalice-app-pipeline-artifact-store/chalice-deployed-state/ ./.chalice/deployed
+      - aws s3 cp --recursive s3://chalice-app-pipeline-artifact-store/chalice-deployed-state/ ./.chalice/deployed
   
   build:
     commands:
@@ -18,4 +18,4 @@ phases:
   post_build:
     commands:
       # Update chalice deployed state
-      - aws s3 cp ./.chalice/deployed s3://chalice-app-pipeline-artifact-store/chalice-deployed-state/
+      - aws s3 cp --recursive ./.chalice/deployed s3://chalice-app-pipeline-artifact-store/chalice-deployed-state/
