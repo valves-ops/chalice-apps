@@ -12,6 +12,7 @@ This repository contains implementations of sample applications in a serverless 
 - Future Improvements
 
 ## Overview
+For convenience a [setup and walkthrough video](https://drive.google.com/file/d/1GBJMJgBB_lh88McRS9tsf3zXQ4YVwK6d/view?usp=drive_link) was made available.
 Currently, the project has only the countries application, which implments a simple information retrieval and storage for the countries data that is extracted from the [REST Countries API](https://restcountries.com).
 The application has three endpoints:
 
