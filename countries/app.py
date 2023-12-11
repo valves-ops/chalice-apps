@@ -34,6 +34,10 @@ def fetch_data(code):
     validate_country_code(code)
     fetch_data_queue = Queue(SQS_QUEUE_NAME)
     fetch_data_queue.send_message(code)
+    successful_response = {
+        'message': f'fetch data request for country ({code.upper()}) successfully queued.'
+    }
+    return successful_response
 
 @app.on_sqs_message(queue=SQS_QUEUE_NAME)
 def fetch_data_handler(event):
